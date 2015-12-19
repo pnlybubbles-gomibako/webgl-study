@@ -1,6 +1,6 @@
 const canvas = document.getElementById('glcanvas');
 const gl = canvas.getContext('webgl');
-gl.clearColor(1, 0, 0, 1);
+gl.clearColor(0, 1, 0, 1);
 gl.clear(gl.COLOR_BUFFER_BIT);
 gl.finish();
 
@@ -51,3 +51,6 @@ n = gl.getAttribLocation(p, 'position');
 gl.bindBuffer(gl.ARRAY_BUFFER, buf);
 gl.enableVertexAttribArray(n);
 gl.vertexAttribPointer(n, 3, gl.FLOAT, false, 0, 0);
+
+gl.drawArrays(gl.TRIANGLES, 0, 3);
+gl.finish();

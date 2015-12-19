@@ -45,3 +45,9 @@ gl.linkProgram(p);
 if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
   console.error('getProgramInfoLog p', gl.getProgramInfoLog(p));
 }
+
+gl.useProgram(p);
+n = gl.getAttribLocation(p, 'position');
+gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+gl.enableVertexAttribArray(n);
+gl.vertexAttribPointer(n, 3, gl.FLOAT, false, 0, 0);
